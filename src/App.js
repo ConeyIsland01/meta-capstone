@@ -1,15 +1,15 @@
 import "./App.css";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Main from "./components/Main";
+import HomePage from "./Home";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="grid-container">
-      <Header />
-      <Main />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route index path="/" element={<HomePage />} />
+        <Route path="/booking" element={{}} />
+      </Routes>
+    </Router>
   );
 }
 

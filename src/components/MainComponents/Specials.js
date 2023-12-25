@@ -13,7 +13,12 @@ const Specials = () => {
           This weeks specials!
         </h1>
         <div className="button">
-          <a href="index.html">Online Menu</a>
+          <a
+            href="/"
+            onClick={() => alert("This page is not required for this capstone")}
+          >
+            Online Menu
+          </a>
         </div>
       </div>
       <div className="items">
