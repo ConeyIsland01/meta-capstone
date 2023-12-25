@@ -5,8 +5,12 @@ import Nav from "./Nav";
 const Header = () => {
   return (
     <header>
-      <img src={logo} alt="Little Lemon" />
-      <Nav />
+      <div>
+        <img src={logo} alt="Little Lemon" />
+      </div>
+      <div>
+        <Nav />
+      </div>
     </header>
   );
 };

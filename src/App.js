@@ -5,11 +5,11 @@ import Main from "./components/Main";
 
 function App() {
   return (
-    <>
+    <div className="grid-container">
       <Header />
       <Main />
       <Footer />
-    </>
+    </div>
   );
 }
 
