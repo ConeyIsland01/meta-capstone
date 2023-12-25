@@ -1,26 +1,46 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Nav = () => {
   return (
     <nav>
       <ul>
         <li>
-          <a href="index.html">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="index.html">About</a>
+          <a
+            href="/"
+            onClick={() => alert("This page is not required for this capstone")}
+          >
+            About
+          </a>
         </li>
         <li>
-          <a href="index.html">Menu</a>
+          <a
+            href="/"
+            onClick={() => alert("This page is not required for this capstone")}
+          >
+            Menu
+          </a>
         </li>
         <li>
-          <a href="index.html">Reservations</a>
+          <Link to="/booking">Reservations</Link>
         </li>
         <li>
-          <a href="index.html">Order Online</a>
+          <a
+            href="/"
+            onClick={() => alert("This page is not required for this capstone")}
+          >
+            Order Online
+          </a>
         </li>
         <li>
-          <a href="index.html">Login</a>
+          <a
+            href="/"
+            onClick={() => alert("This page is not required for this capstone")}
+          >
+            Login
+          </a>
         </li>
       </ul>
     </nav>

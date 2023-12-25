@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../logos/Asset 7@4x.png";
 import face from "../assets/facebook.svg";
 import insta from "../assets/inst.svg";
-
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer>
@@ -11,22 +11,50 @@ const Footer = () => {
           <img src={logo} alt="Little Lemon" />
           <ul>
             <li>
-              <a href="index.html">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="index.html">About</a>
+              <a
+                href="/"
+                onClick={() =>
+                  alert("This page is not required for this capstone")
+                }
+              >
+                About
+              </a>
             </li>
             <li>
-              <a href="index.html">Menu</a>
+              <a
+                href="/"
+                onClick={() =>
+                  alert("This page is not required for this capstone")
+                }
+              >
+                Menu
+              </a>
             </li>
             <li>
-              <a href="index.html">Reservations</a>
+              <Link to="/booking">Reservations</Link>
             </li>
             <li>
-              <a href="index.html">Order Online</a>
+              <a
+                href="/"
+                onClick={() =>
+                  alert("This page is not required for this capstone")
+                }
+              >
+                Order Online
+              </a>
             </li>
             <li>
-              <a href="index.html">Login</a>
+              <a
+                href="/"
+                onClick={() =>
+                  alert("This page is not required for this capstone")
+                }
+              >
+                Login
+              </a>
             </li>
           </ul>
         </div>
@@ -51,14 +79,14 @@ const Footer = () => {
         <h1>Social Media</h1>
 
         <div>
-          <a href="index.html">
+          <a href="facebook.com" target="_blank">
             <img
               src={face}
               style={{ height: "25px", width: "auto", marginRight: "20px" }}
               alt="facebook"
             />
           </a>
-          <a href="index.html">
+          <a href="instagram.com" target="_blank">
             <img
               src={insta}
               style={{ height: "25px", width: "auto", marginRight: "20px" }}
