@@ -1,5 +1,6 @@
 import React from "react";
 import img from "../../assets/restauranfood.jpg";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -14,13 +15,9 @@ const Hero = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            {/* aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum */}
           </p>
-          <div className="button" style={{ width: "150px" }}>
-            <a href="index.html">Reserve a Table</a>
+          <div className="button" style={{ width: "120px" }}>
+            <Link to="/booking">Reservations</Link>
           </div>
         </article>
       </section>
