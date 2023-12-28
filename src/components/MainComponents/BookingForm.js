@@ -8,13 +8,11 @@ const BookingForm = ({
   dispatchUpdateTime,
   formData,
   setFormData,
-  initialState,
 }) => {
   const [confirmationOpen, setConfirmationOpen] = useState(false);
 
   const onChange = (event) => {
     const { name, value } = event.target;
-    console.log("name-value", name, value);
     setFormData({
       ...formData,
       [name]: value,
@@ -28,20 +26,20 @@ const BookingForm = ({
       date: formData.date,
       time: formData.time,
     });
-    console.log("here", formData.date, formData.time);
     const response = submitAPI(formData);
     if (response) {
       setConfirmationOpen(true);
     }
   };
-  console.log("availableTimes", availableTimes);
+
   return (
     <>
       <form onSubmit={handleSubmit}>
         <label htmlFor="date">Choose date</label>
         <input
           name="date"
-          min="2023-12-25"
+          value={formData?.date}
+          min={new Date().toJSON().slice(0, 10)}
           max="2024-01-20"
           onChange={onChange}
           type="date"
@@ -49,7 +47,13 @@ const BookingForm = ({
           required
         />
         <label htmlFor="time">Choose time</label>
-        <select id="time" name="time" onChange={onChange} required>
+        <select
+          id="time"
+          name="time"
+          onChange={onChange}
+          value={formData?.value}
+          required
+        >
           {["", ...availableTimes].map((option) => (
             <option key={option} value={option}>
               {option}
@@ -60,17 +64,23 @@ const BookingForm = ({
         <label htmlFor="guests">Number of guests</label>
         <input
           name="guests"
+          value={formData?.guests}
           onChange={onChange}
           type="number"
           placeholder="1"
-          defaultValue={"1"}
           min="1"
           max="10"
           id="guests"
           required
         />
         <label htmlFor="occasion">Occasion</label>
-        <select onChange={onChange} name="occasion" id="occasion" required>
+        <select
+          onChange={onChange}
+          name="occasion"
+          id="occasion"
+          value={formData?.occasion}
+          required
+        >
           <option>No Special Occasion</option>
           <option>Birthday</option>
           <option>Anniversary</option>
@@ -101,8 +111,6 @@ const BookingForm = ({
         formData={formData}
         confirmationOpen={confirmationOpen}
         setConfirmationOpen={setConfirmationOpen}
-        setFormData={setFormData}
-        initialState={initialState}
       />
     </>
   );
