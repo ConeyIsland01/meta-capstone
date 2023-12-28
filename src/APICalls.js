@@ -17,7 +17,9 @@ function getRandomTimeSlots(date) {
 }
 
 function updateAndRemoveReservedSlot(date, slot) {
-  console.log("slot", slot);
+  if (date === "") {
+    return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+  }
   if (slot) {
     if (localStorage.getItem(date)) {
       const new_item = JSON.stringify(
@@ -42,12 +44,10 @@ function updateAndRemoveReservedSlot(date, slot) {
 }
 
 export const fetchAPI = (date) => {
-  console.log("initialized hit");
   return updateAndRemoveReservedSlot(date);
 };
 
 export const submitAPI = (formData) => {
-  console.log("submit hit");
   updateAndRemoveReservedSlot(formData.date, formData.time);
   return true;
 };

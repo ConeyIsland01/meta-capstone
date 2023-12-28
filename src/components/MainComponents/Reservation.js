@@ -10,7 +10,7 @@ export const updateTimes = (date, time) => {
 };
 
 export const initializeTimes = (date) => {
-  const data = fetchAPI(date || new Date().toJSON().slice(0, 10));
+  const data = fetchAPI(date);
   return data;
 };
 
@@ -19,14 +19,13 @@ const Bookings = () => {
   // since the api code didnt work had to write mock functions
 
   const initialState = {
-    date: new Date().toJSON().slice(0, 10),
+    date: "",
     time: "",
     guests: "1",
     occasion: "No Special Occasion",
   };
 
   const [formData, setFormData] = useState(initialState);
-
   const reducer = (availableTimes, action) => {
     switch (action.type) {
       case "UPDATE":
